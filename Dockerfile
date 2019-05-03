@@ -11,10 +11,12 @@ RUN apt-get update && apt-get install -y \
   vim \
   wget \
   libmcrypt-dev \
+  libbz2-dev \
   && pecl install mcrypt-1.0.1 \
   && docker-php-ext-install mysqli \
   && docker-php-ext-install pdo \
   && docker-php-ext-install pdo_mysql \
+  && docker-php-ext-install bz2 \
   && docker-php-ext-enable mcrypt
 
 # Remove the memory limit for the CLI only.
